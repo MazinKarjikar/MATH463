@@ -1,6 +1,6 @@
 # Complex Variables
 
-In this repo you'll find the LaTeX and PDF notes for the class Complex Variables. I've distilled the definitions, theorems, statements, and examples, so you can quickly grasp the material without getting lost in the fluff.
+In this repo you'll find the [LaTeX](math463_notes.tex) and [PDF](math463_notes.pdf) notes for the class Complex Variables. I've distilled the definitions, theorems, statements, and examples, so you can quickly grasp the material without getting lost in the fluff.
 
 ## Shoot me a message! :speech_balloon:
 
