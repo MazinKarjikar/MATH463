@@ -138,4 +138,102 @@
   $az^2+bz+c$, where $a,b,c \in \C$, define $\Delta = b^2-4ac$. If $\Delta \neq 0$,
   it always has two square roots $\sqrt{\Delta}$ and $-\sqrt{\Delta}$. So the roots
   of the quadratic are $\dis \frac{-b\pm \sqrt{\Delta}}{2a}$.}
+
+  \section{Complex Functions} \vspace{7mm} 
+
+  \framethis{We mainly deal with functions $f: S \subset \C \rightarrow \C$. These can be written as \dots \el
+  $f(z) = w$, or $f(x +iy) = u(x,y) + iv(x,y)$, or $f(re^{i\theta}) = u(r,\theta) + iv(r,\theta)$, \el
+  where $u,v: S \subset \R^2 \rightarrow \R$ are real functions defined on some domain in $\R^2$.}
+
+  \definition{\textbf{Polynomial Functions:} $f(z) = a_nz^n + a_{n-1}z^{n-1} + \dots a_0$,
+  $a_i \in \C$, $a_n \neq 0$.\el
+  \textbf{Rational Functions:} $\dis f(z) = \frac{P(z)}{Q(z)}$, where $P(z)$ and 
+  $Q(z)$ are polynomial functions. Domain of $f(z) = \C \setminus \{$ roots of $Q(z)\}$.\el
+  \textbf{Exponential Functions:} exp: $\C \rightarrow \C$ is defined by sending $z =x + iy$
+  to $e^xe^{iy} = e^x\parens{\cos y \sin y}$, so $u(x,y) = e^x\cos y$, $v(x,y) = e^x\sin y$. \el
+  \textbf{Absolute Value Function:} $f(z) = |z|: \C \ra \C$, $f(x+iy) = \sqrt{x^2+y^2}$, so
+  $u(x,y) = \sqrt{x^2+y^2}$, $v(x,y) = 0$.\el
+  \textbf{Principal Argument Function:} $f(z) = \Arg (z): \C \ra \C$. $f(x+iy) = ?$, where $?$
+  depends on $x$ and $y$. Case $x=y=0$, $?=0$. Case $x=0$, $y \neq 0$, $? = \dis \frac{\pi y}{2|y|}$.
+  Case $x > 0$, $? = \tan \dis \frac{y}{x}$. Case $x < 0$, $? = \pi + \tan^{-1} \dis \frac{y}{x}$.
+  Remember range of $\Arg$ is $(-\pi, \pi]$.\el
+  \textbf{Conjugation function:} $f(z) = \overline{z}: \C \ra \C$, $f(x+iy) = x-iy$,
+  so $u(x,y) = x$, $v(x,y) = -y$. \el 
+  Note that graphing complex functions is impossible as
+  it requires 4 dimensions! We usually graph with respect to $z$, and then to $w$.}
+
+  \framethis{\textbf{Common Functions:}\el \textbf{Translations}. Let $c = a + bi \in \C$. Then $f(z) = 
+  z + c$. \el
+  \textbf{Rotations}. Let $\alpha \in \R$. Then $f(z) = ze^{i\alpha}$. When $\alpha = 0$, it is the identity
+  function. This rotates CCW by $\alpha$. Also $f(re^{i\theta}) = re^{i(\theta + \alpha)}$.\el
+  \textbf{Reflections}. Horizontal axis, $f(z) = \overline{z}$. Vertical axis, 
+  $f(z) = -\overline{z}$. \el
+  $f(z) = z^2$. From the polar perspective, we have $f(re^{i\theta}) = r^2e^{2i\theta}$,
+  which means $f$ squares the moduli and doubles the arguments. A circle centered at 0
+  with radius $r$ traversed once gets mapped to a circle centered at 0 with radius $r^2$
+  traversed twice. \el
+  $f(z) = e^z = e^xe^{iy}$. The visual effect is difficult to explain. Refer to Needham's
+  "Visual Complex Analysis" for further details. }
+
+  \section{Limits} \vspace{7mm}
+
+  \framethis{For a complex function $f$, we say $\lim_{z \to z_0} f(z)= w_0$ if for any
+  $\epsilon > 0$ there exists $\delta > 0$, such that for any $z \in U$ satisfying
+  $ 0 < |z-z_0| < \delta$ we have $|f(z) - f(z_0)| < \epsilon$. In English, this means
+  we can get arbitrarily close to $w_0$ via $f(z)$ as long as $z$ is sufficiently close
+  to $z_0$. If no such $w_0$ exists in the $w$-plane, we say the limit does not exist.\el}
+
+  \theorem{If $f(z)$ is a polynomial function and $z_0$ is in the domain of $f(z)$, then
+  $\lim_{z \to z_0} f(z)= f(z_0)$. If it's not in the domain, the limit does not exist.}
+
+  \theorem{Suppose $f(z),g(z)$ are two complex functions and $\lim_{z \to z_0}f(z) = w_0$
+  and $\lim_{z \to z_0}g(z) = w_1$. Then \dots \el
+    \begin{itemize}[itemsep=-3mm]
+      \item $\lim_{z \to z_0}(f(z)+g(z)) = w_0+w_1$
+      \item $\lim_{z \to z_0}(f(z)g(z)) = w_0w_1$
+      \item If $w_1 \neq 0$, then $\lim_{z \to z_0}\dis\frac{f(z)}{g(z)} = \frac{w_0}{w_1}$
+    \end{itemize}
+  }
+
+  \theorem{Suppose $f(z) = u(x,y) + iv(x,y)$ and $z_0 = x_0 + iy_0$, $w_0 = u_0 + i v_0$,
+  then $\lim_{z \to z_0}f(z) = w_0 \iff$ \el
+  $\lim_{(x,y) \to (x_0, y_0)}u(x,y) = u_0$, $\lim_{(x,y) \to (x_0, y_0)}v(x,y) = v_0$}
+  \vspace{11mm}
+
+  \section{Notion of $\infty$ for Complex Numbers} \vspace{7mm}
+
+  \framethis{Suppose we mapped the complex plane to a unit sphere via \textbf{stereographic projection}.
+  It would be $\{x^2+y^2 = 1\} \setminus \{0,0,1\}$. We say $z \ra \infty$ if the 
+  corresponding points on the sphere approach the north pole. There is no notion of $-\infty$,
+  a complex number $z$ approaches $\infty$ no matter the direction in the complex plane.}
+
+  \theorem{Following useful facts are true: \el
+    \begin{itemize}[itemsep=-3mm]
+      \item $z \ra \infty \iff |z| \ra \infty$
+      \item $\lim_{z \to z_0}f(z) = \infty \iff \dis \lim_{z \to z_0}
+      \frac{1}{f(z)} = 0$
+      \item $\lim_{z \to \infty}f(z) = w_0 \iff \lim_{z \to 0}f(\frac{1}{z}) = w_0$
+      \item $\dis \lim_{z \to \infty}f(z) = \infty \iff \lim_{z \to 0}\frac{1}{f(\frac{1}{z})} = 0$
+    \end{itemize}
+  }
+
+  \section{Continuous Functions} \vspace{7mm}
+
+  \framethis{Suppose $f: U \subset \C \ra \C$ is a complex function. We say $f$ is
+  continuous at $z_0 \in U$ if $\lim_{z \to z_0}f(z) = f(z_0)$.}
+
+  \theorem{Following useful facts are true: \el
+    \begin{itemize}[itemsep=-3mm]
+      \item Sum, product, and quotient (if defined at $z_0$) of continous functions at $z_0$ is 
+      continous at $z_0$.
+      \item If $f$ is continuous at $z_0$ and $g$ is continuous at $f(z_0)$, then 
+      $g \circ f$ is continuous at $z_0$.
+      \item If $f(z) = u(x,y) + iv(x,y)$ then $f$ is continuous at $z_0 = x_0 + iy_0
+      \iff u$ and $v$ are continuous at $(x_0, y_0)$.
+      \item If $f$ is continuous at $z_0$, then so is $\overline{f}$ and $|f|$.
+      \item If $f: S \subset \C \ra \C$ is continuous and $S$ is closed and bounded, then
+      $f$ is bounded, i.e. there exists $M > 0$ s.t. for any $z \in S$, $|f(z)| \leq M$.
+    \end{itemize}
+  }
+
 \end{document}
